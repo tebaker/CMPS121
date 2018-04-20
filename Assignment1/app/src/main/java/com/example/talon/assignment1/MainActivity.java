@@ -19,20 +19,22 @@ public class MainActivity extends AppCompatActivity {
         equalsVal2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // getting exponent for constant 2
-                EditText exp2 = (EditText) findViewById(R.id.exp2EditText);
-                TextView exp2Result = (TextView) findViewById(R.id.result2);
+                try {
+                    // getting exponent for constant 2
+                    EditText exp2 = (EditText) findViewById(R.id.exp2EditText);
+                    TextView exp2Result = (TextView) findViewById(R.id.result2);
 
-                // calculating result
-                int num = Integer.parseInt(exp2.getText().toString());
+                    // calculating result
+                    int num = Integer.parseInt(exp2.getText().toString());
 
-                // testing
-                System.out.println(num);
+                    double calculationResult = Math.pow(2, num);
 
-//                double calculationResult = Math.pow(2,num);
-
-                // setting result of calculation
-//                exp2Result.setText(calculationResult + "");
+                    // setting result of calculation
+                    exp2Result.setText(calculationResult + "");
+                }// end - try
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -41,16 +43,21 @@ public class MainActivity extends AppCompatActivity {
         equalsVal3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // getting exponent for constant 3
-                EditText exp3 = (EditText) findViewById(R.id.exp3EditText);
-                TextView exp3Result = (TextView) findViewById(R.id.result3);
+                try {
+                    // getting exponent for constant 3
+                    EditText exp3 = (EditText) findViewById(R.id.exp3EditText);
+                    TextView exp3Result = (TextView) findViewById(R.id.result3);
 
-                // calculating result
-                int num = Integer.parseInt(exp3.getText().toString());
-                double calculationResult = Math.pow(3,num);
+                    // calculating result
+                    int num = Integer.parseInt(exp3.getText().toString());
+                    double calculationResult = Math.pow(3,num);
 
-                // setting result of calculation
-                exp3Result.setText(calculationResult + "");
+                    // setting result of calculation
+                    exp3Result.setText(calculationResult + "");
+                }// end - try
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -59,16 +66,21 @@ public class MainActivity extends AppCompatActivity {
         equalsVal4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // getting exponent for constant 4
-                EditText exp4 = (EditText) findViewById(R.id.exp4EditText);
-                TextView exp4Result = (TextView) findViewById(R.id.result4);
+                try {
+                    // getting exponent for constant 4
+                    EditText exp4 = (EditText) findViewById(R.id.exp4EditText);
+                    TextView exp4Result = (TextView) findViewById(R.id.result4);
 
-                // calculating result
-                int num = Integer.parseInt(exp4.getText().toString());
-                double calculationResult = Math.pow(4,num);
+                    // calculating result
+                    int num = Integer.parseInt(exp4.getText().toString());
+                    double calculationResult = Math.pow(4,num);
 
-                // setting result of calculation
-                exp4Result.setText(calculationResult + "");
+                    // setting result of calculation
+                    exp4Result.setText(calculationResult + "");
+                }// end - try
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -77,16 +89,21 @@ public class MainActivity extends AppCompatActivity {
         equalsVal5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // getting exponent for constant 5
-                EditText exp5 = (EditText) findViewById(R.id.exp5EditText);
-                TextView exp5Result = (TextView) findViewById(R.id.result5);
+                try {
+                    // getting exponent for constant 5
+                    EditText exp5 = (EditText) findViewById(R.id.exp5EditText);
+                    TextView exp5Result = (TextView) findViewById(R.id.result5);
 
-                // calculating result
-                int num = Integer.parseInt(exp5.getText().toString());
-                double calculationResult = Math.pow(5,num);
+                    // calculating result
+                    int num = Integer.parseInt(exp5.getText().toString());
+                    double calculationResult = Math.pow(5,num);
 
-                // setting result of calculation
-                exp5Result.setText(calculationResult + "");
+                    // setting result of calculation
+                    exp5Result.setText(calculationResult + "");
+                }// end - try
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
