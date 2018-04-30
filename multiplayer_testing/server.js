@@ -23,10 +23,17 @@ io.sockets.on('connection', newConnection);
 function newConnection(socket){
 	console.log('new connection: ' + socket.id);
 
-	// if there's a character message from this client, trigger function charMsg
-	socket.on('character', charMsg);
+	// if there's a character message from client, trigger function charMsg
+	socket.on('charSentData', charMsg);
 
-	function charMsg(data){
-		console.log("from: " + socket.id + " -> " + data);
+	function charMsg(charData){
+
+		var data = {
+			x: socket.id,
+			y: charData
+		}
+
+		console.log("Server Msg Reveived: " + data.x + ", " + data.y);
+		socket.broadcast.emit('serverMsgEmit', data);
 	}
 }
