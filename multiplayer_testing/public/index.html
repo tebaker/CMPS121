@@ -4,8 +4,8 @@
 		<meta charset="UTF-8">
 		<title>Multiplayer Testing</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
-		<script src="code.js" type="text/javascript"></script>
-		
+
+		<!-- Client side javascript for testing -->
 		<script>
 			// clicks for testing
 			var clicks = 0;
@@ -16,6 +16,7 @@
 			// only when a server emits a message for all the clients with 'serverMsgEmit' tag will this code run
 			socket.on('serverMsgEmit', clientReceiveEmitMsg);
 
+
 			function clientReceiveEmitMsg(clickData){
 				console.log("Client Data Received: " + clickData.socketID + ", " + clickData.numClick);
 			}
@@ -23,7 +24,7 @@
 			function clickFunction() {
 				document.getElementById("demo").innerHTML = clicks + 1;
 
-				clicks += 1;
+				clicks++;
 
 				socket.emit('clientEmitData', clicks);
 			}
