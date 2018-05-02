@@ -10,8 +10,9 @@
 			// clicks for testing
 			var clicks = 0;
 
-			// connecting the client to the server on port 3000
-			var socket = io.connect('http://localhost:3000');
+			// NOTE: in order to connect to an external computer, must have your own public IP address. not localhost.
+			// cannot use localhost for public client connection testing
+			var socket = io.connect('http:// -->YOUR IP HERE<-- :3000');
 			
 			// only when a server emits a message for all the clients with 'serverMsgEmit' tag will this code run
 			socket.on('serverMsgEmit', clientReceiveEmitMsg);
