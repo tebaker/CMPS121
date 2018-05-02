@@ -24,16 +24,19 @@ function newConnection(socket){
 	console.log('new connection: ' + socket.id);
 
 	// if there's a character message from client, trigger function charMsg
-	socket.on('charSentData', charMsg);
+	socket.on('clientEmitData', serverReceiveEmitMsg);
 
-	function charMsg(charData){
+	function serverReceiveEmitMsg(clicks){
 
-		var data = {
-			x: socket.id,
-			y: charData
+		console.log("clicks coming in: " + clicks);
+
+		var clickData = {
+			numClick: clicks,
+			socketID: socket.id
+
 		}
 
-		console.log("Server Msg Reveived: " + data.x + ", " + data.y);
-		socket.broadcast.emit('serverMsgEmit', data);
+		console.log("Sending: " + clickData.socketID + ", " + clickData.numClick);
+		socket.broadcast.emit('serverMsgEmit', clickData);
 	}
 }
